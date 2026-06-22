@@ -46,8 +46,6 @@ exports.chat = async (req, res) => {
       systemInstruction: SYSTEM_PROMPT,
     });
 
-    // Convert history to Google AI format (assistant → model)
-    // Drop any leading model messages — Google AI requires history to start with 'user'
     const converted = history.map((m) => ({
       role: m.role === "assistant" ? "model" : "user",
       parts: [{ text: m.content }],
