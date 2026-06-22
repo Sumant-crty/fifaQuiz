@@ -60,13 +60,16 @@ exports.chat = async (req, res) => {
     res.json({ reply });
   } catch (err) {
     console.error("Chat error:", err.message);
-    const msg = err.message?.includes("API_KEY") || err.message?.includes("403")
+    const m = err.message || "";
+    const msg = m.includes("API_KEY") || m.includes("403") || m.includes("API key")
       ? "Invalid Google API key — check GOOGLE_API_KEY in .env"
-      : err.message?.includes("429") || err.message?.includes("quota")
+      : m.includes("429") || m.includes("quota") || m.includes("Too Many")
       ? "AI quota limit reached. Please wait a few minutes and try again."
-      : err.message?.includes("not found") || err.message?.includes("404")
+      : m.includes("not found") || m.includes("404")
       ? `Model '${AI_MODEL}' not found. Update AI_MODEL in .env`
-      : "AI assistant error. Please try again.";
+      : m.includes("ECONNREFUSED") || m.includes("ENOTFOUND") || m.includes("network")
+      ? "Network error — AI service unreachable."
+      : `AI error: ${m.slice(0, 120)}`;
     res.status(500).json({ message: msg });
   }
 };
