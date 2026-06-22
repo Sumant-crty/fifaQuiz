@@ -52,6 +52,14 @@ element={<Leaderboard />}
 
 </Routes>
       <ChatWidget />
+      <div style={{
+        position: "fixed", bottom: 8, left: 0, right: 0,
+        textAlign: "center", zIndex: 500,
+        fontSize: 11, color: "rgba(107,122,154,0.45)",
+        letterSpacing: "0.08em", pointerEvents: "none",
+      }}>
+        © 2026 sumant. All rights reserved.
+      </div>
 </BrowserRouter>
 
 );

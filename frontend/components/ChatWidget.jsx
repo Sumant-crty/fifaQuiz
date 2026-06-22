@@ -90,7 +90,7 @@ export default function ChatWidget() {
                 FIFA Assistant
               </div>
               <div style={{ fontSize: 10, color: "rgba(107,122,154,0.8)", letterSpacing: "0.08em" }}>
-                Google AI · Gemini · 1930–2026 Expert
+                1930–2026 World Cup Expert
               </div>
             </div>
             <div style={{ marginLeft: "auto", width: 8, height: 8, borderRadius: "50%",

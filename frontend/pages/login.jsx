@@ -73,16 +73,6 @@ export default function Login() {
           <div className="stat-cell"><span className="stat-num">60<span style={{fontSize:14}}>s</span></span><span className="stat-lbl">Timer</span></div>
         </div>
 
-        <p style={{
-          textAlign: "center",
-          fontSize: 11,
-          color: "rgba(107,122,154,0.5)",
-          letterSpacing: "0.08em",
-          marginTop: 20,
-        }}>
-          © 2026 sumant. All rights reserved.
-        </p>
-
       </div>
     </div>
   );
