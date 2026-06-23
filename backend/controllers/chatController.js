@@ -64,7 +64,7 @@ exports.chat = async (req, res) => {
       ? `Model '${AI_MODEL}' not found. Update AI_MODEL in .env`
       : m.includes("ECONNREFUSED") || m.includes("ENOTFOUND") || m.includes("network")
       ? "Network error — AI service unreachable."
-      : `AI error: ${m.slice(0, 120)}`;
+      : `AI error: ${m.slice(0, 300)}`;
     res.status(500).json({ message: msg });
   }
 };
