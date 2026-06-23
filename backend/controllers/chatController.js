@@ -59,7 +59,7 @@ exports.chat = async (req, res) => {
     const msg = m.includes("API_KEY") || m.includes("403") || m.includes("API key")
       ? "Invalid Google API key — check GOOGLE_API_KEY in .env"
       : m.includes("429") || m.includes("quota") || m.includes("Too Many")
-      ? "AI quota limit reached. Please wait a few minutes and try again."
+      ? "Chat is resting! Go play the quiz and come back to chat later. 🏆"
       : m.includes("not found") || m.includes("404")
       ? `Model '${AI_MODEL}' not found. Update AI_MODEL in .env`
       : m.includes("ECONNREFUSED") || m.includes("ENOTFOUND") || m.includes("network")
